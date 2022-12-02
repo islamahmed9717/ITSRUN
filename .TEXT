@@ -1,0 +1,129 @@
+Microsoft Windows [Version 10.0.19044.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Eslam>pip install mysql-connector-python
+Requirement already satisfied: mysql-connector-python in c:\users\eslam\appdata\local\programs\python\python311\lib\site-packages (8.0.31)
+Requirement already satisfied: protobuf<=3.20.1,>=3.11.0 in c:\users\eslam\appdata\local\programs\python\python311\lib\site-packages (from mysql-connector-python) (3.20.1)
+
+C:\Users\Eslam>cd forwho
+The system cannot find the path specified.
+
+C:\Users\Eslam>cd Desktop
+
+C:\Users\Eslam\Desktop>cd FORWHO
+
+C:\Users\Eslam\Desktop\forwho>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Eslam\Desktop\forwho>cd myflaskapp
+
+C:\Users\Eslam\Desktop\forwho\myflaskapp>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| islam              |
+| mysql              |
+| performance_schema |
+| record_company     |
+| sys                |
++--------------------+
+
+6 rows in set (0.26 sec)
+
+mysql> CREATE DATABASE myflaskapp
+    -> CREATE DATABASE myflaskapp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE DATABASE myflaskapp' at line 2
+mysql> CREATE DATABASE myflaskapp;
+Query OK, 1 row affected (0.31 sec)
+
+mysql> USE myflaskapp;
+Database changed
+mysql> CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,     )
+    -> CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,     )
+    -> USE myflaskapp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,     )
+USE myflaskap' at line 1
+mysql> CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255),email VARCHAR(255) , username VARCHAR(255),password VARCHAR(255), register_date TIMESTAMP DEFAULT CURRENT_TIMESAMP );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_TIMESAMP )' at line 1
+mysql> CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255),email VARCHAR(255) , username VARCHAR(255),password VARCHAR(255), register_date TIMESTAMP DEFAULT CURRENT_TIMESAMP );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_TIMESAMP )' at line 1
+mysql> CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100), email VARCHAR(100) , username VARCHAR(30),password VARCHAR(100), register_date TIMESTAMP DEFAULT CURRENT_TIMESAMP );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_TIMESAMP )' at line 1
+mysql> USE myflaskapp;
+Database changed
+mysql> CREATE TABLE users (id INT(11) AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255),email VARCHAR(255) , username VARCHAR(255),password VARCHAR(255), register_date TIMESTAMP DEFAULT CURRENT_TIMESAMP );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURRENT_TIMESAMP )' at line 1
+mysql> CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100), username VARCHAR(30), password VARCHAR(100),register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+Query OK, 0 rows affected, 1 warning (1.80 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_myflaskapp |
++----------------------+
+| users                |
++----------------------+
+1 row in set (0.61 sec)
+
+mysql> DESCRIBE users
+    -> DESCRIBE users;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESCRIBE users' at line 2
+mysql> DESCRIBE users;
++---------------+--------------+------+-----+-------------------+-------------------+
+| Field         | Type         | Null | Key | Default           | Extra             |
++---------------+--------------+------+-----+-------------------+-------------------+
+| id            | int          | NO   | PRI | NULL              | auto_increment    |
+| name          | varchar(100) | YES  |     | NULL              |                   |
+| email         | varchar(100) | YES  |     | NULL              |                   |
+| username      | varchar(30)  | YES  |     | NULL              |                   |
+| password      | varchar(100) | YES  |     | NULL              |                   |
+| register_date | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++---------------+--------------+------+-----+-------------------+-------------------+
+6 rows in set (0.37 sec)
+
+mysql> SELECT * FROM users
+    -> SELECT * FROM users;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM users' at line 2
+mysql> SELECT * FROM users;
++----+-------+--------------------------+--------------------------+-------------------------------------------------------------------------------+---------------------+
+| id | name  | email                    | username                 | password                                                                      | register_date       |
++----+-------+--------------------------+--------------------------+-------------------------------------------------------------------------------+---------------------+
+|  1 | islam | eslamahmed1996@yahoo.com | islamahmed9717@gmail.com | $5$rounds=535000$/81er8xIlMY9PdMx$caCtCgCHd4TUDVhLXM2XlU5iLg2mMPNCn9n1mu5erq9 | 2022-12-02 22:22:24 |
+|  2 | islam | islamahmed9717@gmail.com | islamahmed9717           | $5$rounds=535000$EkUHMYNrLzk1wKk3$gCbto/.4ezd3P8ayDAWkniQvA8BBNNp0qjjQwAqvo70 | 2022-12-02 22:23:50 |
++----+-------+--------------------------+--------------------------+-------------------------------------------------------------------------------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE articles(id INT(11) AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), author VARCHAR(100), body TEXT, create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP );
+Query OK, 0 rows affected, 1 warning (0.37 sec)
+
+mysql> SHOW TABLES
+    -> SHOW TABLES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SHOW TABLES' at line 2
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_myflaskapp |
++----------------------+
+| articles             |
+| users                |
++----------------------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
